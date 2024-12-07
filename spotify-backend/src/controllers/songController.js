@@ -17,7 +17,7 @@ const addSong = async (req,res)=>{
 
         const duration = `${Math.floor(auidoUpload.duration/60)}:${Math.floor(auidoUpload.duration%60)}`
         const songData ={
-            name,desc,album,image:imageUpload.secure_url,file:auidoUpload.secure_url,duration
+            name,desc,album,image:imageUpload.secure_url,song:auidoUpload.secure_url,duration
         }
         const song = songModel(songData);
         await song.save();
